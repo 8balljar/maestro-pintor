@@ -1,13 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
 
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Nunito', sans-serif;
     font-size: 20px;
 }
-
 
 .header{
     background-color: #1b3039;
@@ -74,52 +71,381 @@
     transform: scale(1.1);
 }
 
-.slider-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+/*=============== S L I D E R ============*/
+
+body{
+  background: #f2f2f2;
+}
+
+.contenedor{
+  width: 100%;
   overflow: hidden;
 }
 
-.slider {
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-
-
- /* SLIDER */
-
-
-.slider-container {
-  position: relative;
-  height: auto;
-  width: 100%;
-}
-
-.slider {
-  max-width: 100%;
-  height: auto;
+.slider-contenedor{
   width: 100%;
   display: flex;
-  flex-wrap: nowrap;
-  transition: transform 0.5s ease-in-out;
 }
 
-.slider img {
-  height: auto;
+.contenido-slider{
   width: 100%;
-  object-fit: cover;
+  height: 533px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
-  .slider {
-    flex-wrap: wrap;
-  }
+.contenido-slider:nth-child(2){
+  background: #332863;
+  color: #fff;
+}
+
+.contenido-slider:nth-child(3){
+  background: #611a68;
+}
+
+.contenido-slider > img{
+  width: 400px;
+}
+
+.contenido-slider > div{
+  width: 40%;
+}
+
+.contenido-slider h2{
+  font-weight: 300;
+  text-align: justify;
+  line-height: 30px;
+}
+
+.contenido-slider a{
+  color: #fff;
+  background: #332863;
+  width: 100px;
+  display: block;
+  padding: 15px 0;
+  text-align: center;
+  border-radius: 3px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.contenido-slider:nth-child(2) a{
+  background: #fff;
+  color: #332863;
   
-  .slider img {
+}
+
+@media screen and (max-width:900px){
+  .contenido-slider > img{
+      width: 350px;
+  }
+
+  .contenido-slider > div{
+      width: 40%;
+  }
+
+  .contenido-slider h2{
+      font-size: 23px;
+  }
+}
+
+
+@media screen and (max-width:600px){
+  .contenido-slider{
+     flex-direction: column-reverse;
+  }
+
+  .contenido-slider > div{
+      width: 80%;
+  }
+
+}
+
+  /*========= I M A G E N  T R A B A J O S ============*/
+  .image-section {
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+    
+    .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px -5px;
+    }
+    
+    .col-4 {
+    flex-basis: 33.33%;
+    padding: 5px;
+    box-sizing: border-box;
+    }
+    
+    .col-6 {
+    flex-basis: 50%;
+    padding: 5px;
+    box-sizing: border-box;
+    }
+    
+    img {
+    display: block;
     width: 100%;
     height: auto;
+    }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    margin-top: 50px;
   }
-}
+  
+  .contact-form h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 0;
+  }
+  
+  .field {
+    margin-bottom: 20px;
+  }
+  
+  .field label {
+    display: block;
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 5px;
+  }
+  
+  .field input {
+    display: block;
+    width: 100%;
+    line-height: 1.5;
+    font-size: 18px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    padding: 12px 50px;
+    font-size: 18px;
+    background-color: #4460AA;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #1E3A8A;
+  }
+  
+  
+/* ===================== C A R D ================== */
+  .container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	flex-direction: column;
+  }
+  
+  
+  .about-us {
+	background-color: #f8f8f8;
+	padding: 50px 0;
+  }
+  
+  .container {
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: center;
+  }
+  
+  h2 {
+	font-size: 36px;
+	margin-bottom: 20px;
+  }
+  
+  p {
+	font-size: 18px;
+	line-height: 1.5;
+	margin-bottom: 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+	h2 {
+	  font-size: 24px;
+	}
+	
+	p {
+	  font-size: 16px;
+	}
+  }
+
+
+
+  .card {
+	width: 520px;
+	margin: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	border-radius: 5px;
+	overflow: hidden;
+  }
+  
+  .card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .card img {
+	width: 100%;
+	height: auto;
+  }
+  
+  .card-text {
+	padding: 20px;
+  }
+  
+  .card-text h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+  }
+  
+  .card-text p {
+	font-size: 16px;
+	margin-bottom: 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+	.card {
+	  width: 100%;
+	  
+	}
+  }
+
+/*============ formulario ===============*/
+
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 400px;
+	width: 400px;
+	border-radius: 50%;
+	background-color: #f0f0f0;
+	box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+	margin: auto;
+	margin-top: 50px;
+  }
+  
+  .contact-form h2 {
+	text-align: center;
+	font-size: 28px;
+	margin-top: 0;
+  }
+  
+  .field {
+	margin-bottom: 20px;
+  }
+  
+  .field label {
+	display: block;
+	font-size: 16px;
+	color: #777;
+	margin-bottom: 5px;
+  }
+  
+  .field input {
+	display: block;
+	width: 100%;
+	line-height: 1.5;
+	font-size: 18px;
+	padding: 10px;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+  }
+  
+  input[type="submit"] {
+	display: block;
+	padding: 12px 50px;
+	font-size: 18px;
+	background-color: #4460AA;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-top: 20px;
+  }
+  
+  input[type="submit"]:hover {
+	background-color: #1E3A8A;
+  }
+ 
+  #whatsapp-logo {
+	position: fixed;
+	width: 10%;
+	bottom: 20px;
+	right: 20px;
+	z-index: 9999;
+	transition: all 0.3s ease-in-out;
+  }
+  
+  
+  #whatsapp-logo:hover {
+	transform: scale(1.2);
+  }
+  /*=============== F O O T E R ===============*/
+
+  .footer-container {
+    width: 100%;
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin-top: 100px;
+  }
+  footer {
+    background-color: #eb0000;
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;
+    
+   
+   
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-top: 20px;
+    font-weight: bold;
+  }
