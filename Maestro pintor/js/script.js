@@ -4,17 +4,17 @@ document.getElementById('form')
  .addEventListener('submit', function(event) {
    event.preventDefault();
 
-   btn.value = 'Sending...';
+   btn.value = 'enviando...';
 
    const serviceID = 'default_service';
    const templateID = 'template_c173uwe';
 
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
-      btn.value = 'Send Email';
-      alert('Sent!');
+      btn.value = 'Enviar';
+      alert('Mensaje enviado!');
     }, (err) => {
-      btn.value = 'Send Email';
+      btn.value = 'Enviar';
       alert(JSON.stringify(err));
     });
 });
@@ -29,34 +29,45 @@ window.addEventListener("scroll", function() {
     }
   });
 
-//header//
-let slider = document.querySelector(".slider-contenedor")
-let sliderIndividual = document.querySelectorAll(".contenido-slider")
-let contador = 1;
-let width = sliderIndividual[0].clientWidth;
-let intervalo = 3000;
+const menu = document.querySelector(".menu");
+const openMenuBtn = document.querySelector(".open-menu");
+const closeMenuBtn = document.querySelector(".close-menu");
 
-window.addEventListener("resize", function(){
-    width = sliderIndividual[0].clientWidth;
-})
-
-setInterval(function(){
-    slides();
-},intervalo);
-
-//slider//
-
-function slides(){
-    slider.style.transform = "translate("+(-width*contador)+"px)";
-    slider.style.transition = "transform .8s";
-    contador++;
-
-    if(contador == sliderIndividual.length){
-        setTimeout(function(){
-            slider.style.transform = "translate(0px)";
-            slider.style.transition = "transform 0s";
-            contador=1;
-        },1500)
-    }
+function toggleMenu() {
+  menu.classList.toggle("menu_opened");
 }
+
+openMenuBtn.addEventListener("click", toggleMenu);
+closeMenuBtn.addEventListener("click", toggleMenu);
+
+const menuLinks = document.querySelectorAll('.menu a[href^="#"]');
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      const id = entry.target.getAttribute("id");
+      const menuLink = document.querySelector(`.menu a[href="#${id}"]`);
+
+      if (entry.isIntersecting) {
+        document.querySelector(".menu a.selected").classList.remove("selected");
+        menuLink.classList.add("selected");
+      }
+    });
+  },
+  { rootMargin: "-30% 0px -70% 0px" }
+);
+
+menuLinks.forEach((menuLink) => {
+  menuLink.addEventListener("click", function () {
+    menu.classList.remove("menu_opened");
+  });
+
+  const hash = menuLink.getAttribute("href");
+  const target = document.querySelector(hash);
+  if (target) {
+    observer.observe(target);
+  }
+});
+
+
 
