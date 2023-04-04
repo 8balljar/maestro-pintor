@@ -19,15 +19,7 @@ document.getElementById('form')
     });
 });
 
-window.addEventListener("scroll", function() {
-    var logo = document.getElementById("whatsapp-logo");
-    var y = window.pageYOffset;
-    if (y > 500) {
-      logo.style.bottom = "50px";
-    } else {
-      logo.style.bottom = "20px";
-    }
-  });
+
 
 const menu = document.querySelector(".menu");
 const openMenuBtn = document.querySelector(".open-menu");

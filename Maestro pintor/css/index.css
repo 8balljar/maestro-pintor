@@ -405,7 +405,6 @@ a {
 
 /*============ formulario ===============*/
 
-/* Estilos generales */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -499,7 +498,7 @@ input[type="submit"]:hover {
   
   #whatsapp-logo {
 	position: fixed;
-	width: 4%;
+	width: 54px;
 	bottom: 20px;
 	right: 20px;
 	z-index: 9999;
